@@ -1,0 +1,121 @@
+.mainPage {
+    background-image: url(../public/Images/heroBanner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heroSection .title h1 {
+    font-size: 80px;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--primary);
+    font-family: 'bold';
+    position: relative;
+}
+
+
+.searchbar form {
+    box-shadow: 0px 18px 36px rgba(27, 65, 201, 0.12), 0px 8px 24px rgba(27, 65, 201, 0.08);
+}
+
+.searchbar .submit_button {
+    color: var(--primary);
+    background: var(--gold);
+    border: 0;
+    border-radius: var(--common-round);
+    font-size: 16px;
+    font-family: medium;
+
+}
+
+.searchbar .form-control,
+.searchbar .form-control:focus {
+    border: 0;
+    height: 64px;
+    box-shadow: none;
+    border-radius: var(--common-round);
+
+}
+
+.searchbar .form-control::placeholder {
+    color: var(--dark);
+    font-size: 16px;
+    opacity: 0.5;
+}
+
+.searchbar {
+    max-width: 800px;
+    margin: auto;
+}
+
+.tableData {
+    background: #F5F6F9;
+}
+
+.tabSelect button {
+    color: var(--primary);
+    background: var(--white);
+    padding: 16px 20px;
+    border: none;
+    border-radius: var(--common-round);
+    font-family: 'medium';
+    transition: var(--transition-all-3);
+    text-transform: uppercase;
+
+}
+
+.tabSelect button.active,
+.tabSelect button:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.categorySelect .form-select,
+.categorySelect .form-select:focus {
+    padding: 16px 20px;
+    width: 350px;
+    box-shadow: none;
+    border: none;
+}
+
+.table_content .table>:not(caption)>*>* {
+    border: 0;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+
+.table_content .table tbody tr{
+/* background: rgb(255, 255, 255); */
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+.table_content .table tbody tr td:first-child{
+    max-width: 200px;
+}
+
+table tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+table tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+table tr:first-child td:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+table tr:first-child td:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+
+.tag button {
+    padding: 7px 16px;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px 5px 0px 5px;
+    color: var(--white);
+    font-size: 14px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,83 @@
+footer .footerBg {
+    background: var(--primary);
+}
+
+
+footer .social_link li:not(:last-child) {
+    margin-right: 20px;
+}
+
+footer .social_link .icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--gold);
+    border-radius: var(--common-round);
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-all-3);
+    -webkit-transition: var(--transition-all-3);
+}
+
+footer .social_link .icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--gold);
+    transition: var(--transition-all-3);
+    -webkit-transition: var(--transition-all-3);
+}
+
+footer .social_link .icon:hover {
+    background: var(--gold);
+}
+
+footer .social_link .icon:hover svg {
+    color: var(--primary);
+}
+
+footer .single_content .content li a {
+    font-size: 16px;
+    color: var(--white);
+    text-decoration: none;
+    line-height: 32px;
+    transition: var(--transition-all-3);
+    -webkit-transition: var(--transition-all-3);
+}
+
+footer .single_content .content li a:hover {
+
+    color: var(--gold);
+    text-decoration: none;
+
+}
+
+footer .banner {
+    max-width: 1100px;
+    display: block;
+    margin-left: 5%;
+    /* margin-left: auto; */
+    /* margin-top: -100px; */
+    background: var(--white);
+    box-shadow: 0px 78px 246px rgba(0, 3, 62, 0.1), 0px 24px 74px rgba(0, 3, 62, 0.07);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+footer .submit_button {
+    background: var(--white);
+    border: 0;
+    border-radius: var(--common-round);
+}
+footer .form-control, footer .form-control:focus{
+    border: 0;
+    border-radius: var(--common-round);
+    height: 48px;
+    box-shadow: none;
+}
+footer .form-control::placeholder{
+    color: var(--dark);
+    font-size: 16px;
+}
+
+

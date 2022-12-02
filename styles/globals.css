@@ -1,0 +1,166 @@
+@import "./Header.css";
+@import "./MainPage.css";
+@import "./Footer.css";
+
+/* Sofia Pro font */
+
+@font-face {
+  font-family: 'regular';
+  src: url(../Components/Common/Font/Sofia_Pro_Regular.ttf);
+}
+
+@font-face {
+  font-family: 'medium';
+  src: url(../Components/Common/Font/Sofia_Pro_Medium.ttf);
+}
+
+@font-face {
+  font-family: 'bold';
+  src: url(../Components/Common/Font/Sofia_Pro_Bold.ttf);
+}
+
+/* reset css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'regular';
+}
+
+/* variable set up */
+
+:root {
+  --primary: #1B41C9;
+  --white: #FFFFFF;
+  --gold: #F3D227;
+  --dark: #1E2230;
+  --gray: #F5F6F9;
+  --common-round: 5px 5px 0px 5px;
+  --common-round-10: 10px 10px 0px 10px;
+  --transition-all-3: all linear 0.3s;
+}
+
+
+/* color */
+
+.cl_white {
+  color: var(--white);
+}
+
+.cl_white_hover,
+.cl_white_hover:hover {
+  color: var(--white);
+}
+
+.cl_black {
+  color: var(--dark);
+}
+
+.cl_pm {
+  color: var(--primary);
+}
+
+.cl_gold {
+  color: var(--gold);
+}
+
+
+/* background color */
+
+.bg_dark {
+  background: var(--dark);
+}
+
+.bg_gray {
+  background: var(--gray);
+}
+
+/* font size */
+
+.fs32 {
+  font-size: 32px;
+}
+
+.fs24 {
+  font-size: 24px;
+}
+
+.fs20 {
+  font-size: 20px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+/* font weight */
+
+.medium {
+  font-family: 'medium';
+}
+
+.bold {
+  font-family: 'bold';
+}
+
+/* letter space */
+
+/* common css */
+.sesction_pt {
+  padding-top: 4rem;
+}
+
+.sesction_pb {
+  padding-bottom: 4rem;
+}
+
+.sesction_pt7 {
+  padding-top: 7rem;
+}
+
+.sesction_pb7 {
+  padding-bottom: 7rem;
+}
+
+.underline_none {
+  text-decoration: none;
+}
+
+.l_s_none {
+  list-style: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.common_round5 {
+  border-radius: var(--common-round);
+}
+
+.common_round10 {
+  border-radius: var(--common-round-10);
+}
+
+.transition_all_3 {
+  transition: all linear 0.3s;
+  -webkit-transition: all linear 0.3s;
+}
+
+.smallBtn {
+  background: var(--gold);
+  padding: 13px 24px;
+  border: none;
+  font-family: 'medium';
+
+}
+
+@media screen and (max-width: 767px) {}
+
+/* ===========768px to 991px========== */
+@media (min-width: 768px) and (max-width: 991px) {}

@@ -1,0 +1,29 @@
+nav .navbar-nav a {
+    font-size: 16px;
+    color: black;
+    padding-right: 27px !important;
+    text-transform: uppercase;
+    font-family: 'medium';
+    transition: var(--transition-all-3);
+
+    display: flex;
+    align-items: center;
+}
+
+nav .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.topHeader {
+    background-image: url(../public/Images/Common/headerbg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.promotion .promotion_logo{
+    top: -20px;
+}
+.promotion .promotion_content{
+    margin-left: 125px;
+}

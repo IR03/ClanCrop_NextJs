@@ -1,0 +1,1 @@
+export const BACKEND_BASE_URL = "https://forum-server.onrender.com/forum";
