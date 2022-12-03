@@ -9,7 +9,7 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    background: #fa0909;
+    background: var(--primary);
     border-radius: 50%;
     margin: -15px;
     -webkit-animation: mesh 3s ease-in-out infinite -1.5s;
