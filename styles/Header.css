@@ -7,7 +7,6 @@ nav .navbar-nav a {
     padding-right: 27px !important;
     text-transform: uppercase;
     font-family: 'medium';
-    transition: var(--transition-all-3);
     white-space: nowrap;
     display: flex;
     align-items: center;

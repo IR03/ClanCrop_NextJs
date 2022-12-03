@@ -230,7 +230,7 @@ const MainPage = () => {
 
                                                                             ))
                                                                         }
-                                                                        <span className='cl_black2 medium ms-2'>{data.user}+</span>
+                                                                        <span className='cl_black2 medium ps-2'>{data.user}+</span>
                                                                     </div>
 
                                                                 </td>
