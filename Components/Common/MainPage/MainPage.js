@@ -1,45 +1,38 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { Container, Form, InputGroup, Pagination, Table } from 'react-bootstrap';
-import Header from '../Header/Header';
 import { FiSearch } from "react-icons/fi";
 import { MdOutlineAddCircle } from "react-icons/md";
 import ApiDataService from '../../../ApiDataService/ApiDataService';
 
 const MainPage = () => {
 
-    useEffect(() => {
-        getBlogs();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
     const [apiData, setApiData] = useState([]);
-
-
     const getBlogs = async () => {
         try {
-
             const res = await ApiDataService.getForumData();
             setApiData(res?.data);
-
-        } catch (error) {
+        }
+        catch (error) {
         }
     }
+
+    useEffect(() => {
+        getBlogs();
+    }, [])
 
     //  filter
     const [searchFilter, setSearchFilter] = useState('');
     const [categoryFilter, setCategoryFilter] = useState('all');
     const [finalData, setFinalData] = useState([]);
 
-
+    // paggination
     const [localPage, setLocalPage] = useState(1);
     const rowsPerPage = 3;
-
     let pageCount = Math.round(finalData?.length / rowsPerPage);
-
-    // ===========================Pagination ===================
-
     let active = localPage;
     let items = [];
+
     for (let number = 1; number <= pageCount; number++) {
         items.push(
             <Pagination.Item
@@ -52,13 +45,9 @@ const MainPage = () => {
         );
     }
 
-    console.log(pageCount);
-
-
+    //  filter function
     useEffect(() => {
-
-
-        // check1 search filter
+        // search filter
         let searchFilterData = apiData.filter((query) => {
             return (
                 query.title.toString().toLowerCase().includes(searchFilter) ||
@@ -67,33 +56,33 @@ const MainPage = () => {
             );
         });
 
+        // category filter
         if (categoryFilter == "all") {
             setFinalData(searchFilterData);
         }
         else {
-
             let categoryFilterData = searchFilterData.filter((categoryData) => {
                 return (
                     categoryData.category.toString().toLowerCase().includes(categoryFilter.toLowerCase())
                     // categoryData.category.toString().toLowerCase().match(categoryFilter.toLowerCase()) 
-
                 );
             });
-
             setFinalData(categoryFilterData);
-
         }
 
     }, [searchFilter, categoryFilter, apiData]);
 
     return (
+        // main Page
         <div className='mainPage'>
-            <Header />
+
+
+            {/* heroSection */}
             <section className='heroSection sesction_pt7 sesction_pb7'>
                 <Container>
                     <div className="heroSection_wrapper">
                         <div className="title">
-                            <h1>
+                            <h1 className='fs80'>
                                 Ideal solution to
                                 <br />
                                 enhance <span className='cl_gold bold'>your business.</span>
@@ -116,12 +105,16 @@ const MainPage = () => {
                     </div>
                 </Container>
             </section>
-            <section className="tableData sesction_pt sesction_pb">
+
+            {/* table section */}
+            <section className="tableData sesction_pt">
                 <Container>
                     <div className="filterBar">
+                        {/* filter button */}
                         <div className="d-flex flex-wrap justify-content-between align-items-center">
 
-                            <div className="categorySelect">
+                            {/* category filter */}
+                            <div className="categorySelect mb-4">
                                 <Form.Select aria-label="Default select example"
                                     onChange={(e) => setCategoryFilter(e.target.value)}>
                                     <option value="all">All Categories</option>
@@ -130,21 +123,19 @@ const MainPage = () => {
                                             <option key={index} value={catData?.category}>{catData?.category}</option>
                                         ))
                                     }
-                                    {/* <option value="Management">Management</option>
-                                    <option value="Software">Software</option>
-                                    <option value="Inventory">Inventory</option> */}
                                 </Form.Select>
                             </div>
 
-                            <div className="tab d-flex flex-wrap">
-                                <div className='tabSelect d-flex  me-5'>
+                            {/* tab filter */}
+                            <div className="tab d-flex flex-wrap ">
+                                <div className='tabSelect d-flex flex-wrap  me-md-5 mb-4'>
                                     <button className='me-3 active'>latest</button>
                                     <button className='me-3'>unread</button>
                                     <button className='me-3'>rising</button>
                                     <button className='me-3'>Most liked</button>
                                 </div>
 
-                                <div className="createNew">
+                                <div className="createNew mb-4">
                                     <button className='smallBtn common_round5 cl_pm fs14 py-3 text-uppercase d-flex'>
                                         <MdOutlineAddCircle size={20} className='me-1' />
                                         Create New </button>
@@ -153,16 +144,17 @@ const MainPage = () => {
 
                         </div>
 
+                        {/* table_content */}
                         <div className="table_content sesction_pt">
-                            <Table responsive >
+                            <Table responsive hover>
                                 <thead >
                                     <tr>
-                                        <th >Topic</th>
-                                        <th>Category</th>
-                                        <th>User</th>
-                                        <th>Replies</th>
-                                        <th>Views</th>
-                                        <th>Activity</th>
+                                        <th className='cl_black2 fs20'>Topic</th>
+                                        <th className='cl_black2 fs20'>Category</th>
+                                        <th className='cl_black2 fs20'>User</th>
+                                        <th className='cl_black2 fs20'>Replies</th>
+                                        <th className='cl_black2 fs20'>Views</th>
+                                        <th className='cl_black2 fs20'>Activity</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -173,7 +165,7 @@ const MainPage = () => {
                                         ).map((data) => (
                                             <tr key={data.id}>
                                                 <td>
-                                                    <p className='fs20 medium '>
+                                                    <p className='fs20 medium cl_black'>
                                                         {data.title}
                                                     </p>
                                                     <div className="d-flex flex-wrap">
@@ -189,8 +181,24 @@ const MainPage = () => {
                                                     </div>
 
                                                 </td>
-                                                <td className='cl_pm'>{data.category}</td>
-                                                <td>{data.user}+</td>
+                                                <td className='cl_pm medium'>{data.category}</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center userImage">
+                                                        {
+                                                            data?.userImage?.map((userImg) => (
+                                                                <img 
+                                                                
+                                                                key={userImg.id} 
+                                                                className='img-fluid' 
+                                                                src={userImg.image} 
+                                                                alt={userImg.name} />
+            
+                                                            ))
+                                                        }
+                                                        <span className='cl_black2 medium ms-2'>{data.user}+</span>
+                                                    </div>
+                                                    
+                                                </td>
                                                 <td>{data.replies}</td>
                                                 <td>{data.views}</td>
                                                 <td>{data.activity} days</td>
@@ -203,13 +211,11 @@ const MainPage = () => {
 
                         </div>
                     </div>
+                    <div className="paggination mt-5">
+                        <Pagination className='justify-content-center'>{items}</Pagination>
+                    </div>
                 </Container>
             </section>
-            <div className="bg-danger">
-
-               
-                <Pagination className='justify-content-center'>{items}</Pagination>
-            </div>
         </div>
     );
 };

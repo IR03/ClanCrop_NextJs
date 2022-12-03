@@ -1,3 +1,6 @@
+nav  {
+    background: #f9f8f0;
+}
 nav .navbar-nav a {
     font-size: 16px;
     color: black;
@@ -5,7 +8,7 @@ nav .navbar-nav a {
     text-transform: uppercase;
     font-family: 'medium';
     transition: var(--transition-all-3);
-
+    white-space: nowrap;
     display: flex;
     align-items: center;
 }
@@ -21,9 +24,38 @@ nav .navbar-nav a:hover {
     background-size: cover;
 }
 
-.promotion .promotion_logo{
+.topHeader .promotion .promotion_logo {
     top: -20px;
 }
-.promotion .promotion_content{
+
+.topHeader .promotion .promotion_content {
     margin-left: 125px;
+}
+
+
+@media screen and (max-width: 767px) {
+    .topHeader .addNow {
+        margin: auto;
+    }
+    .topHeader .promotion .promotion_logo {
+        display: none;
+        visibility: hidden;
+    }
+    .topHeader .promotion .promotion_content {
+        margin-left: unset;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .topHeader .addNow {
+        margin: auto;
+    }
+    
+}
+@media (min-width: 992px) and (max-width: 1199px){
+    nav .navbar-nav a {
+        font-size: 14px;
+        padding-right: 10px !important;
+    }
 }

@@ -35,6 +35,7 @@
   --white: #FFFFFF;
   --gold: #F3D227;
   --dark: #1E2230;
+  --dark2: #646970;
   --gray: #F5F6F9;
   --common-round: 5px 5px 0px 5px;
   --common-round-10: 10px 10px 0px 10px;
@@ -55,6 +56,10 @@
 
 .cl_black {
   color: var(--dark);
+}
+
+.cl_black2 {
+  color: var(--dark2);
 }
 
 .cl_pm {
@@ -78,27 +83,27 @@
 
 /* font size */
 
+.fs80 {
+  font-size: 80px;
+}
 .fs32 {
   font-size: 32px;
 }
-
 .fs24 {
   font-size: 24px;
 }
-
 .fs20 {
   font-size: 20px;
 }
-
 .fs16 {
   font-size: 16px;
 }
-
 .fs14 {
   font-size: 14px;
 }
 
 /* font weight */
+
 
 .medium {
   font-family: 'medium';
@@ -160,7 +165,55 @@
 
 }
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
 
-/* ===========768px to 991px========== */
-@media (min-width: 768px) and (max-width: 991px) {}
+
+  /* font size */
+  .fs80 {
+    font-size: 40px;
+  }
+  .fs32 {
+    font-size: 22px;
+  }
+  .fs24 {
+    font-size: 20px;
+  }
+  .fs20 {
+    font-size: 18px;
+  }
+  
+  .fs16 {
+    font-size: 14px;
+  }
+
+  /* padding */
+  .sesction_pt7 {
+    padding-top: 4rem;
+  }
+  
+  .sesction_pb7 {
+    padding-bottom: 4rem;
+  }
+
+  .sesction_pt {
+    padding-top: 3rem;
+  }
+  
+  .sesction_pb {
+    padding-bottom: 3rem;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .fs80 {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .fs80 {
+    font-size: 60px;
+  }
+}
