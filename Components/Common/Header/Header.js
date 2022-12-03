@@ -52,8 +52,8 @@ const Header = () => {
                         placement="end"
                     >
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id='offcanvasNavbarLabel-expand-lg'>
-                                Offcanvas
+                            <Offcanvas.Title id='offcanvasNavbarLabel-expand-lg' className='cl_pm medium'>
+                                Clan <span className='cl_gold medium'>Crop</span>
                             </Offcanvas.Title>
                         </Offcanvas.Header>
 

@@ -9,6 +9,9 @@ import gift from "../../../public/Images/Common/gift.png";
 import payment from "../../../public/Images/Common/payment.png";
 
 const Footer = () => {
+
+    const today = new Date();
+
     return (
         <>
             <footer>
@@ -224,7 +227,7 @@ const Footer = () => {
                             {/* left content */}
                             <div className="copyright_content ">
                                 <p className='fs16 cl_black medium'>
-                                    Copyright © 2021
+                                    Copyright © {today.getFullYear()}
                                     <span className='cl_pm fs20 medium mx-1'>Clan</span>
                                     <span className='cl_gold fs20 medium me-1'>Crop.</span>
                                     All Rights Reserved.
